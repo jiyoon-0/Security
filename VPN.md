@@ -20,7 +20,7 @@
          - Peer 신분 정보 암호화되어 Peer의 신분이 외부에 노출되지 않음
       - Aggressive Mode : 보안 세션 연결을 시도하는 Peer가 모든 정보에 대해 일괄적인 협상 시도(3개의 메시지 교환)   
          - 첫 번째 메시지에 신분 정보를 포함하여 외부에 노출될 가능성이 있지만 속도와 자원 사용량 우수    
-       *) ISAKMP(Internet Security Association and Key Management Protocol) : 보안 채널을 생성함으로써 인터넷 환경에서 키 정보를 암호문 형태로 교환할 수 있게 개발된 키 보안 프로토콜(1단계의 결과물)
+      *) ISAKMP(Internet Security Association and Key Management Protocol) : 보안 채널을 생성함으로써 인터넷 환경에서 키 정보를 암호문 형태로 교환할 수 있게 개발된 키 보안 프로토콜(1단계의 결과물)
     - IKE Phase 2 
       - 사용자 트래픽의 암호화를 위한 터널 생성(IPSec SA)
       - ISAKMP SA를 기반으로 인증 정책을 협상하므로 ISAKMP 터널 필수
@@ -35,7 +35,7 @@
   3) 설정
      - IKE 1단계
        - 키 정보 교환을 위한 보안 터널을 생성하는 ISAKMP 설정
-       - ISAKMP 보안 터널을 위해 필요한 암호화, 인증, 해시 및 디피-헬만 그룹 정의
+       - ISAKMP 보안 터널을 위해 필요한 암호화, 인증, 해시 및 디피-헬만 그룹 정의   
          ex) 암호화 - AES, 인증 - Preshare, 해시 - SHA, 디피-헬만 그룹 - 그룹2   
          AES, DES, 3DES / Pre-share or RSA / MD5 or SHA, SHA-256, SHA-384, SHA-512   
        - isakmp policy : 여러 Peer를 가지며 정책이 모두 다를 때 낮은 번호가 가장 높은 선호도   
