@@ -18,15 +18,15 @@
       - Main Mode : IPSec Peer 대화를 위한 보안 채널 형성을 위해 단계별 협상 진행(6개의 메시지 교환)
          - Peer 신분 정보 암호화되어 Peer의 신분이 외부에 노출되지 않음
       - Aggressive Mode : 보안 세션 연결을 시도하는 Peer가 모든 정보에 대해 일괄적인 협상 시도(3개의 메시지 교환)
-         - 첫 번째 메시지에 신분 정보를 포함하여 외부에 노출될 가능성이 있지만 속도와 자원 사용량 우수
+         - 첫 번째 메시지에 신분 정보를 포함하여 외부에 노출될 가능성이 있지만 속도와 자원 사용량 우수   
         *) ISAKMP(Internet Security Association and Key Management Protocol) : 보안 채널을 생성함으로써 인터넷 환경에서 키 정보를 암호문 형태로 교환할 수 있게 개발된 키 보안 프로토콜(1단계의 결과물)
     - IKE Phase 2 
       - 사용자 트래픽의 암호화를 위한 터널 생성(IPSec SA)
       - ISAKMP SA를 기반으로 인증 정책을 협상하므로 ISAKMP 터널 필수
       - IPSec SA는 단방향 통신으로 송신 터널과 수신 터널 요구(보안성 향상)
-      - 단방향 터널로 사용자 트래픽이 암호화 될 때 암호화 패킷에 AH, ESP 보안 프로토콜 정보 삽입
-      *) AH(Authentication Header) : 인증을 위한 헤더를 제공하는 프로토콜, 암호화를 제공하지 않고 인증을 통해 패킷 조작 여부 작업을 수행
-      *) ESP(Encapsulating Security Payload) : 보안을 위해 페이로드를 캡슐화 하는 프로토콜, 상위 계층 정보인 페이로드의 캡슐화(암호화) 제공
+      - 단방향 터널로 사용자 트래픽이 암호화 될 때 암호화 패킷에 AH, ESP 보안 프로토콜 정보 삽입   
+      *) AH(Authentication Header) : 인증을 위한 헤더를 제공하는 프로토콜, 암호화를 제공하지 않고 인증을 통해 패킷 조작 여부 작업을 수행   
+      *) ESP(Encapsulating Security Payload) : 보안을 위해 페이로드를 캡슐화 하는 프로토콜, 상위 계층 정보인 페이로드의 캡슐화(암호화) 제공   
    - 모드
      - 터널 모드(Tunnel Mode) : 사용자 패킷 전체를 암호화 하고 새로운 L3 헤더를 추가하는 방식(추가된 L3 헤더를 기반으로 라우팅), 원래 패킷의 헤더는 라우팅 시 사용되지 않고 원래 사용자 패킷 전체를 암호화하는 방식
      - 전송 모드(Transport Mode) : L3 헤더를 제외한 상위 계층 정보만 암호화, 사용자 데이터만 보호
@@ -34,9 +34,9 @@
      1. IKE 1단계
        - 키 정보 교환을 위한 보안 터널을 생성하는 ISAKMP 설정
        - ISAKMP 보안 터널을 위해 필요한 암호화, 인증, 해시 및 디피-헬만 그룹 정의
-         ex) 암호화 - AES, 인증 - Preshare, 해시 - SHA, 디피-헬만 그룹 - 그룹2
-         AES, DES, 3DES / Pre-share or RSA / MD5 or SHA, SHA-256, SHA-384, SHA-512
-       - isakmp policy : 여러 Peer를 가지며 정책이 모두 다를 때 낮은 번호가 가장 높은 선호도
+         ex) 암호화 - AES, 인증 - Preshare, 해시 - SHA, 디피-헬만 그룹 - 그룹2   
+         AES, DES, 3DES / Pre-share or RSA / MD5 or SHA, SHA-256, SHA-384, SHA-512   
+       - isakmp policy : 여러 Peer를 가지며 정책이 모두 다를 때 낮은 번호가 가장 높은 선호도   
        - Pre-share : 사전에 인증 키를 상호간에 물리적으로 공유(관리자가 인증 패스워드를 미리 정해놓고 사용, 인증키 직접 설정 필요)
        - 암호화 알고리즘 : DES 가장 가벼운 알고리즘
        - 디피-헬만 그룹 : 키 암호화 교환을 위한 알고리즘 그룹
