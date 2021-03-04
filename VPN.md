@@ -15,12 +15,12 @@
     - IKE Phase 1
       - 트래픽을 암호화하는 데 사용되는 인증 키, 열쇠 전달을 위한 보안 터널을 생성하는 단계
       - IPSec Peer 인증 및 키 정보 교환을 위한 보안 채널 생성   
-        *) SA(Security Association) : IPSec Peer 간에 생성되는 보안 터널
+       *) SA(Security Association) : IPSec Peer 간에 생성되는 보안 터널
       - Main Mode : IPSec Peer 대화를 위한 보안 채널 형성을 위해 단계별 협상 진행(6개의 메시지 교환)   
          - Peer 신분 정보 암호화되어 Peer의 신분이 외부에 노출되지 않음
       - Aggressive Mode : 보안 세션 연결을 시도하는 Peer가 모든 정보에 대해 일괄적인 협상 시도(3개의 메시지 교환)   
          - 첫 번째 메시지에 신분 정보를 포함하여 외부에 노출될 가능성이 있지만 속도와 자원 사용량 우수    
-        *) ISAKMP(Internet Security Association and Key Management Protocol) : 보안 채널을 생성함으로써 인터넷 환경에서 키 정보를 암호문 형태로 교환할 수 있게 개발된 키 보안 프로토콜(1단계의 결과물)
+       *) ISAKMP(Internet Security Association and Key Management Protocol) : 보안 채널을 생성함으로써 인터넷 환경에서 키 정보를 암호문 형태로 교환할 수 있게 개발된 키 보안 프로토콜(1단계의 결과물)
     - IKE Phase 2 
       - 사용자 트래픽의 암호화를 위한 터널 생성(IPSec SA)
       - ISAKMP SA를 기반으로 인증 정책을 협상하므로 ISAKMP 터널 필수
