@@ -28,43 +28,43 @@
  14.    
 ! You will need to modify these sample configuration files to take advantage of AES256, SHA256, or other DH groups like 2, 14-18, 22, 23, and 24.   
 ! NOTE: If you customized tunnel options when creating or modifying your VPN connection, you may need to modify these sample configurations to match the custom settings for your tunnels.   
-> 설정하는 상대방 VPN도 동일한 스펙으로 설정 필요   
-!
-! Higher parameters are only available for VPNs of category "VPN," and not for "VPN-Classic".
-!
-! The address of the external interface for your customer gateway must be a static address. 
-! Your customer gateway may reside behind a device performing network address translation (NAT). 
+#### 설정하는 상대방 VPN도 동일한 스펙으로 설정 필요   
+!   
+! Higher parameters are only available for VPNs of category "VPN," and not for "VPN-Classic".   
+!   
+! The address of the external interface for your customer gateway must be a static address.    
+! Your customer gateway may reside behind a device performing network address translation (NAT).    
 ! To ensure that NAT traversal (NAT-T) can function, you must adjust your firewall rules to unblock UDP port 4500. If not behind NAT, we recommend disabling NAT-T. 
-!
-! Configuration begins in root VDOM.
+!   
+! Configuration begins in root VDOM.   
 
 
-Go to VPN-->IPSec--> AutoKey, create Phase 1
-> Phase 1은 ISAKMP 터널을 생성하기 위한 과정
- a. Name: vpn-0777e44f5c3f8a391-0 ! Name must be shorter than 15 chars, best if shorter than 12
- b. Remote Gateway: Static IP Address
- c. IP address: 13.209.59.252
- d. Local Interface: wan1
- e. Mode: Main
- > Peer 신분 정보 암호화되어 Peer의 신분이 외부에 노출되지 않음   
+Go to VPN-->IPSec--> AutoKey, create Phase 1   
+#### Phase 1은 ISAKMP 터널을 생성하기 위한 과정   
+ a. Name: vpn-0777e44f5c3f8a391-0 ! Name must be shorter than 15 chars, best if shorter than 12   
+ b. Remote Gateway: Static IP Address   
+ c. IP address: 13.209.59.252   
+ d. Local Interface: wan1   
+ e. Mode: Main   
+#### Peer 신분 정보 암호화되어 Peer의 신분이 외부에 노출되지 않음    
  f. Authentication Method: Pre-shared Key
- > 사전에 인증 키를 상호간에 물리적으로 공유(관리자가 인증 패스워드를 미리 정해놓고 사용, 인증키 직접 설정 필요)   
- g. Pre-Shared Key: QzlTUSOKfg3hXAlrfaqYC_uAjxvygmXl
+#### 사전에 인증 키를 상호간에 물리적으로 공유(관리자가 인증 패스워드를 미리 정해놓고 사용, 인증키 직접 설정 필요)      
+ g. Pre-Shared Key: QzlTUSOKfg3hXAlrfaqYC_uAjxvygmXl   
 
- h. Select "Enable IPsec Interface Mode"
- i. Ike Version: 1
- > 암호화, 해시, 디피-헬만 그룹 정의
+ h. Select "Enable IPsec Interface Mode"   
+ i. Ike Version: 1   
+#### 암호화, 해시, 디피-헬만 그룹 정의   
  j. Local-gateway: Select Specify and enter 165.246.204.254
  k. Encryption: aes128 
- l. Authentication: sha1
- m. DH group: 2     ! and deselect 5
+ l. Authentication: sha1   
+ m. DH group: 2     ! and deselect 5   
  n. Keylife: 28800 seconds
- > ISAKMP SA가 활성화 하는 시간(외부에 키가 노출되는 것을 막기 위함)
+#### ISAKMP SA가 활성화 하는 시간(외부에 키가 노출되는 것을 막기 위함)   
     
 ! NAT Traversal is enabled by default but if your FortiGate device is not behind a NAT/PAT device, please deselect NAT Traversal.
 
- o. Select  Dead Peer Detection Enable
- p. Click ok
+ o. Select  Dead Peer Detection Enable   
+ p. Click ok   
 
 
 ! #2: IPSec Configuration
@@ -77,9 +77,9 @@ Go to VPN-->IPSec--> AutoKey, create Phase 1
 ! Higher parameters are only available for VPNs of category "VPN," and not for "VPN-Classic".
 
 Go to VPN-->IPSec--> AutoKey, create Phase 2
-> 실제 트래픽을 암호화할 터널을 생성하는 Phase 2
- a. Name   :  vpn-0777e44f5c3f8a391-0 ! Name must be shorter than 15 chars, best if shorter than 12
- b. Phase 1:  vpn-0777e44f5c3f8a391-0
+#### 실제 트래픽을 암호화할 터널을 생성하는 Phase 2   
+ a. Name   :  vpn-0777e44f5c3f8a391-0 ! Name must be shorter than 15 chars, best if shorter than 12   
+ b. Phase 1:  vpn-0777e44f5c3f8a391-0   
 
 Select Advanced
 
