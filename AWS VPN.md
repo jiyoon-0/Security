@@ -21,7 +21,7 @@
 !  
 ! A policy is established for the supported ISAKMP encryption,   
 ! authentication, Diffie-Hellman, lifetime, and key parameters.
-> 인증, 디피-헬만 암호화 등 설정을 기반으로 한 ISAKMP 보안 터널 생성   
+> 인증, 디피-헬만 암호화 등 설정을 기반으로 한 ISAKMP 보안 터널 생성<
 ! Please note, these sample configurations are for the minimum requirement of AES128, SHA1, and DH Group 2.
 > 암호화 AES 128, 해시 SHA 1, 디피-헬프만 2가 최소 스펙, 아래 보면 AES256-SHA256으로 변경 가능
 ! Category "VPN" connections in the GovCloud region have a minimum requirement of AES128, SHA2, and DH Group  
