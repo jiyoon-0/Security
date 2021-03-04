@@ -169,10 +169,10 @@ config vdom
         set failtime 5  
     next  
 end  
-
-! -------------------------------------------------------------------------------- 
-! #5: Firewall Policy Configuration  
-!  
+  
+! --------------------------------------------------------------------------------  
+! #5: Firewall Policy Configuration    
+!    
 ! Create a firewall policy permitting traffic from your local subnet to the VPC subnet and vice versa  
 ! This example policy permits all traffic from the local subnet to the VPC.  
 !    
